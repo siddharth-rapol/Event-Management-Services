@@ -1,0 +1,108 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(120deg, #2a334e 0%, #37b7c9 35%, #fd5e7a 70%, #ffd64d 100%);
+  color: #222;
+}
+
+.logo-header {
+  background: rgba(44, 44, 60, 0.10);
+  padding: 22px 0;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 240px;
+  max-width: 80vw;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border-radius: 22px;
+}
+
+.logo-text h1 {
+  font-size: 2.2em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #21272e;
+  text-shadow: 2px 2px 8px #ffd64d33;
+  margin-top: 0;
+}
+
+.rentals, .catering {
+  background: rgba(44, 44, 60, 0.11);
+  border-radius: 20px;
+  max-width: 540px;
+  margin: 40px auto;
+  padding: 30px 18px;
+  box-shadow: 0 3px 18px rgba(0,0,0,0.06);
+}
+
+.rentals h2, .catering h2 {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.rental-icons {
+  text-align: center;
+  margin-top: 22px;
+}
+
+.rental-icon {
+  font-size: 2.3em;
+  margin: 0 12px;
+}
+
+.catering-title {
+  color: #ffd64d;
+  font-size: 1.2em;
+  display: block;
+  margin-top: 7px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px #2a334e;
+}
+
+.chef-hat, .chicken-leg {
+  font-size: 2em;
+  margin: 0 10px;
+}
+
+footer {
+  background: rgba(44,44,60,0.08);
+  padding: 24px 0;
+  text-align: center;
+  margin-top: 40px;
+  box-shadow: 0 -4px 8px rgba(0,0,0,0.03);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.phone {
+  font-size: 2em;
+}
+
+.contact-number {
+  margin-top: 7px;
+  font-weight: bold;
+  color: #ffd64d;
+}
+
+.call-us {
+  margin-top: 8px;
+  font-size: 1em;
+  font-style: italic;
+  color: #37b7c9;
+}
