@@ -1,4 +1,4 @@
-/* ========== Global Styles ========== */
+/* Global */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
@@ -6,19 +6,17 @@ body {
   color: #222;
 }
 
-/* ========== Header & Logo ========== */
+/* Header & Logo */
 .logo-header {
   background: rgba(44, 44, 60, 0.1);
   padding: 22px 0;
   text-align: center;
 }
-
 .logo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .logo-img {
   width: 240px;
   max-width: 80vw;
@@ -31,7 +29,6 @@ body {
   transform: scale(1.04) rotate(-2deg);
   box-shadow: 0 8px 28px rgba(253, 94, 122, 0.14);
 }
-
 .logo-text h1 {
   margin-top: 0;
   font-size: 2.2em;
@@ -45,7 +42,7 @@ body {
   color: #fd5e7a;
 }
 
-/* ========== Rentals & Catering Sections ========== */
+/* Rentals & Catering Sections */
 .rentals,
 .catering {
   max-width: 540px;
@@ -61,7 +58,6 @@ body {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 7px 24px rgba(55, 183, 201, 0.14);
 }
-
 .rentals h2,
 .catering h2 {
   text-align: center;
@@ -70,12 +66,11 @@ body {
   letter-spacing: 1px;
 }
 
-/* Icons inside Rentals */
+/* Rental Icons */
 .rental-icons {
   text-align: center;
   margin-top: 22px;
 }
-
 .rental-icon {
   font-size: 2.3em;
   margin: 0 12px;
@@ -87,7 +82,7 @@ body {
   transform: scale(1.24) rotate(6deg);
 }
 
-/* Catering extra title */
+/* Catering */
 .catering-title {
   display: block;
   margin-top: 7px;
@@ -100,8 +95,6 @@ body {
 .catering-title:hover {
   color: #fd5e7a;
 }
-
-/* Food icons */
 .chef-hat,
 .chicken-leg {
   font-size: 2em;
@@ -115,7 +108,7 @@ body {
   color: #fd5e7a;
 }
 
-/* ========== Footer ========== */
+/* Footer */
 footer {
   margin-top: 40px;
   padding: 24px 0;
@@ -127,14 +120,12 @@ footer {
 footer:hover {
   background: rgba(255, 214, 77, 0.13);
 }
-
 .contact-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 1.2em;
 }
-
 .phone {
   font-size: 2em;
   cursor: pointer;
@@ -144,7 +135,6 @@ footer:hover {
   color: #fd5e7a;
   transform: scale(1.25);
 }
-
 .contact-number {
   margin-top: 7px;
   font-weight: bold;
@@ -154,7 +144,6 @@ footer:hover {
 .contact-number:hover {
   color: #fd5e7a;
 }
-
 .call-us {
   margin-top: 8px;
   font-size: 1em;
