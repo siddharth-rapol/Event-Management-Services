@@ -2,64 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Management Services</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="logo.png" alt="Event Logo">
-      <span>Event Management</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Rentals</a></li>
-      <li><a href="#">Catering</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <div class="hamburger">&#9776;</div>
-  </nav>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
+  </header>
 
   <!-- Carousel -->
-  <div class="carousel">
+  <section class="carousel">
     <div class="slides">
-      <img src="event1.jpg" alt="Party Image 1">
-      <img src="party2.jpg" alt="Party Image 2">
-      <img src="party3.jpg" alt="Party Image 3">
+      <div class="slide active"><img src="event1.jpg" alt="Party 1"></div>
+      <div class="slide"><img src="event2.jpg" alt="Party 2"></div>
+      <div class="slide"><img src="event3.jpg" alt="Party 3"></div>
     </div>
-  </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </section>
 
   <!-- Text Section -->
-  <section class="intro-text">
-    <h1>Welcome to Our Event Management Services</h1>
-    <p>
-      We specialize in creating unforgettable experiences through professional event 
-      planning, catering, and rentals. Whether it’s a wedding, birthday party, or 
-      corporate gathering, we bring your vision to life with creativity and excellence.
-    </p>
+  <section class="content">
+    <h2>Welcome to Our Event Management Services</h2>
+    <p>We specialize in creating unforgettable experiences, from weddings to corporate events and parties. 
+       Our team ensures every detail is perfect, making your special day stress-free and memorable.</p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Event Management Services | All Rights Reserved</p>
-    <p>Follow us on 
-      <a href="#">Facebook</a> | 
-      <a href="#">Instagram</a> | 
-      <a href="#">Twitter</a>
-    </p>
+    <p>&copy; 2025 Event Management Services. All Rights Reserved.</p>
+    <p>Designed with ❤️ by Our Team</p>
   </footer>
 
-  <!-- Script (Hamburger toggle) -->
+  <!-- Script Inside HTML -->
   <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    // Hamburger Menu
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
     });
+
+    // Carousel
+    const slides = document.querySelectorAll(".slide");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.classList.remove("active");
+        slide.style.transform = `translateX(${100 * (idx - i)}%)`;
+      });
+      slides[i].classList.add("active");
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    }
+
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
+
+    // Auto slide every 1 second
+    setInterval(nextSlide, 1000);
+
+    // Initialize
+    showSlide(index);
   </script>
 </body>
 </html>
