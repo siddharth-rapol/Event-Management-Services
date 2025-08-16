@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Event Management Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger">&#9776;</div>
+  </nav>
+
+  <!-- About Section -->
+  <section class="content">
+    <h2>About Us</h2>
+    <p>
+      Welcome to <strong>Event Management Services</strong>, where creativity meets flawless execution.  
+      We specialize in organizing unforgettable events tailored to your vision.  
+      Whether it’s a wedding, corporate gathering, birthday, or a large-scale festival,  
+      we deliver experiences that leave a lasting impression.
+    </p>
+    <p>
+      With a passionate team and years of expertise, we bring together design, planning,  
+      and seamless coordination to craft events that reflect your personality and purpose.  
+      Our goal is to ensure you enjoy your celebration stress-free while we handle  
+      every detail with professionalism.
+    </p>
+  </section>
+
+  <!-- Our Services Section -->
+  <section class="content" style="background:#C6C0B3; color:#FAF8F5;">
+    <h2>Our Services</h2>
+    <ul style="list-style:none; padding:0; font-size:18px; line-height:1.8;">
+      <li>✔ Wedding Planning & Decoration</li>
+      <li>✔ Corporate Events & Conferences</li>
+      <li>✔ Birthday & Private Parties</li>
+      <li>✔ Cultural & Community Events</li>
+      <li>✔ Concerts, Exhibitions & Festivals</li>
+      <li>✔ Catering, Photography & Entertainment</li>
+    </ul>
+  </section>
+
+  <!-- Mission -->
+  <section class="content">
+    <h2>Our Mission</h2>
+    <p>
+      To create unforgettable, unique, and stress-free events for our clients in the  
+      United States and beyond. We aim to combine innovation, personalization, and  
+      professionalism to bring your dream event to life.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Event Management Services | Designed with Passion</p>
+  </footer>
+
+  <!-- Script for navbar toggle -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
