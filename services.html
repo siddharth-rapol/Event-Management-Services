@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Event Management Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger">&#9776;</div>
+  </nav>
+
+  <!-- Services Intro -->
+  <section class="content">
+    <h2>Our Services</h2>
+    <p>
+      At <strong>Event Management Services</strong>, we pride ourselves on delivering  
+      exceptional event experiences across the United States.  
+      From intimate gatherings to large-scale events, our team ensures  
+      everything runs smoothly and beautifully.
+    </p>
+  </section>
+
+  <!-- Service Cards -->
+  <section class="content" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;">
+    
+    <div style="background:#C6C0B3; color:#FAF8F5; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+      <h3>🎉 Wedding Planning</h3>
+      <p>Elegant themes, venue selection, décor, and complete wedding coordination tailored to your vision.</p>
+    </div>
+
+    <div style="background:#FAF8F5; color:#4C5F4E; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+      <h3>🏢 Corporate Events</h3>
+      <p>Professional conferences, seminars, product launches, and team-building events with seamless execution.</p>
+    </div>
+
+    <div style="background:#C6C0B3; color:#FAF8F5; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+      <h3>🎂 Birthday & Private Parties</h3>
+      <p>Memorable birthday bashes, themed parties, and intimate private gatherings with creative setups.</p>
+    </div>
+
+    <div style="background:#FAF8F5; color:#4C5F4E; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+      <h3>🎭 Cultural & Community Events</h3>
+      <p>Festivals, exhibitions, cultural programs, and charity events designed to bring people together.</p>
+    </div>
+
+    <div style="background:#C6C0B3; color:#FAF8F5; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+      <h3>🎤 Concerts & Entertainment</h3>
+      <p>Live shows, concerts, celebrity appearances, and entertainment that keeps the crowd energized.</p>
+    </div>
+
+    <div style="background:#FAF8F5; color:#4C5F4E; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+      <h3>🍽 Catering & Photography</h3>
+      <p>Delicious catering services, professional photography, and videography to capture every memory.</p>
+    </div>
+
+  </section>
+
+  <!-- Closing -->
+  <section class="content">
+    <h2>Why Choose Us?</h2>
+    <p>
+      Our passion, creativity, and professionalism set us apart.  
+      We focus on every detail, so you can enjoy your event without stress.  
+      From planning to execution, we are your trusted event partners across the USA.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Event Management Services | All Rights Reserved</p>
+  </footer>
+
+  <!-- Script for Navbar Toggle -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
