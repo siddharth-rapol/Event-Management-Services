@@ -1,124 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Management Services</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header / Navbar -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="brand" aria-label="Home">
-        <img src="logo.png" alt="Event Management Logo" />
-      </a>
-
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
-        ☰
-      </button>
-
-      <nav id="primary-nav" class="nav" role="navigation">
-        <a href="#">Home</a>
-        <a href="#rentals">Rentals</a>
-        <a href="#catering">Catering</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+  <!-- Header with Navbar -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+        <span class="brand">Event Management</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Rentals</a></li>
+          <li><a href="#">Catering</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <div class="container">
-      <!-- Carousel -->
-      <section id="gallery" class="carousel" aria-label="Event highlights">
-        <div class="slides">
-          <img src="event1.jpg" alt="Decorated venue with lighting" class="active" />
-          <img src="event2.jpg" alt="Banquet catering setup" />
-          <img src="event3.jpg" alt="Stage and seating arrangement" />
-        </div>
-        <button class="carousel-btn prev" aria-label="Previous slide">‹</button>
-        <button class="carousel-btn next" aria-label="Next slide">›</button>
-        <div class="dots" aria-hidden="true"></div>
-      </section>
-
-      <!-- Rentals -->
-      <section id="rentals" class="card">
-        <h2>Rentals: Chairs, Tables, Decorations</h2>
-        <div class="icons">🎉 🍽️ 🎊 🎁</div>
-      </section>
-
-      <!-- Catering -->
-      <section id="catering" class="card">
-        <h2>🍗 Catering Service<br /><span class="accent">Krispy Crunchy Chicken</span></h2>
-      </section>
+  <!-- Carousel Section -->
+  <section class="carousel">
+    <div class="slides">
+      <img src="event1.jpg" alt="Event 1">
+      <img src="event2.jpg" alt="Event 2">
+      <img src="event3.jpg" alt="Event 3">
     </div>
-  </main>
+  </section>
+
+  <!-- Text Section -->
+  <section class="intro-text">
+    <h2>Welcome to Our Event Management Services</h2>
+    <p>
+      We provide complete event solutions including rentals, catering, and
+      decorations to make your special day unforgettable.
+    </p>
+  </section>
 
   <!-- Footer -->
-  <footer id="contact" class="site-footer">
-    <div class="container">
-      <p class="contact-number">📞 860-994-0973</p>
-      <p class="call-us">Call Us Today!</p>
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Event Management Services. All Rights Reserved.</p>
+      <p>Designed with ❤️ for your celebrations</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms & Conditions</a> | 
+        <a href="#">Support</a>
+      </div>
     </div>
   </footer>
-
-  <script>
-    /* Mobile menu */
-    const menuBtn = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav");
-    menuBtn.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
-      menuBtn.setAttribute("aria-expanded", open);
-    });
-
-    /* Carousel */
-    const slides = Array.from(document.querySelectorAll(".slides img"));
-    const prev = document.querySelector(".prev");
-    const next = document.querySelector(".next");
-    const dotsWrap = document.querySelector(".dots");
-    let i = 0, timer;
-
-    function renderDots() {
-      dotsWrap.innerHTML = "";
-      slides.forEach((_, idx) => {
-        const b = document.createElement("button");
-        b.className = "dot" + (idx === i ? " active" : "");
-        b.addEventListener("click", () => goTo(idx));
-        dotsWrap.appendChild(b);
-      });
-    }
-
-    function show(idx) {
-      slides.forEach((img, j) => img.classList.toggle("active", j === idx));
-      [...dotsWrap.children].forEach((d, j) => d.classList.toggle("active", j === idx));
-    }
-    function goTo(idx) { i = (idx + slides.length) % slides.length; show(i); }
-    function nextSlide() { goTo(i + 1); }
-    function prevSlide() { goTo(i - 1); }
-
-    next.addEventListener("click", nextSlide);
-    prev.addEventListener("click", prevSlide);
-
-    function startAuto() { timer = setInterval(nextSlide, 5000); }
-    function stopAuto() { clearInterval(timer); }
-    document.querySelector(".carousel").addEventListener("mouseenter", stopAuto);
-    document.querySelector(".carousel").addEventListener("mouseleave", startAuto);
-
-    // Touch swipe
-    let sx = null;
-    const slidesEl = document.querySelector(".slides");
-    slidesEl.addEventListener("touchstart", e => (sx = e.touches[0].clientX), { passive: true });
-    slidesEl.addEventListener("touchend", e => {
-      if (sx === null) return;
-      const dx = e.changedTouches[0].clientX - sx;
-      if (Math.abs(dx) > 40) (dx < 0 ? nextSlide : prevSlide)();
-      sx = null;
-    });
-
-    renderDots();
-    show(i);
-    startAuto();
-  </script>
 </body>
 </html>
