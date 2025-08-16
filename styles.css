@@ -1,166 +1,167 @@
+/* ========== Global Styles ========== */
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  background: linear-gradient(120deg, #2a334e 0%, #37b7c9 35%, #fd5e7a 70%, #ffd64d 100%);
-  color: #222;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(120deg, #2a334e 0%, #37b7c9 35%, #fd5e7a 70%, #ffd64d 100%);
+  color: #222;
 }
 
+/* ========== Header & Logo ========== */
 .logo-header {
-  background: rgba(44, 44, 60, 0.10);
-  padding: 22px 0;
-  text-align: center;
+  background: rgba(44, 44, 60, 0.1);
+  padding: 22px 0;
+  text-align: center;
 }
 
 .logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo-img {
-  width: 240px;
-  max-width: 80vw;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  border-radius: 22px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  width: 240px;
+  max-width: 80vw;
+  margin-bottom: 10px;
+  border-radius: 22px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-/* Logo image hover effect */
 .logo-img:hover {
-  transform: scale(1.04) rotate(-2deg);
-  box-shadow: 0 8px 28px rgba(253,94,122,0.14);
+  transform: scale(1.04) rotate(-2deg);
+  box-shadow: 0 8px 28px rgba(253, 94, 122, 0.14);
 }
 
 .logo-text h1 {
-  font-size: 2.2em;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: #21272e;
-  text-shadow: 2px 2px 8px #ffd64d33;
-  margin-top: 0;
-  transition: color 0.2s;
+  margin-top: 0;
+  font-size: 2.2em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #21272e;
+  text-shadow: 2px 2px 8px #ffd64d33;
+  transition: color 0.2s;
 }
-/* Logo text hover effect */
 .logo-text h1:hover {
-  color: #fd5e7a;
+  color: #fd5e7a;
 }
 
-.rentals, .catering {
-  background: rgba(44, 44, 60, 0.11);
-  border-radius: 20px;
-  max-width: 540px;
-  margin: 40px auto;
-  padding: 30px 18px;
-  box-shadow: 0 3px 18px rgba(0,0,0,0.06);
-  transition: box-shadow 0.2s, transform 0.2s;
+/* ========== Rentals & Catering Sections ========== */
+.rentals,
+.catering {
+  max-width: 540px;
+  margin: 40px auto;
+  padding: 30px 18px;
+  border-radius: 20px;
+  background: rgba(44, 44, 60, 0.11);
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-/* Rentals and catering section hover */
-.rentals:hover, .catering:hover {
-  box-shadow: 0 7px 24px rgba(55,183,201,0.14);
-  transform: translateY(-5px) scale(1.02);
-}
-
-.rentals h2, .catering h2 {
-  text-align: center;
-  font-size: 1.3em;
-  font-weight: bold;
-  letter-spacing: 1px;
+.rentals:hover,
+.catering:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 7px 24px rgba(55, 183, 201, 0.14);
 }
 
+.rentals h2,
+.catering h2 {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Icons inside Rentals */
 .rental-icons {
-  text-align: center;
-  margin-top: 22px;
+  text-align: center;
+  margin-top: 22px;
 }
 
 .rental-icon {
-  font-size: 2.3em;
-  margin: 0 12px;
-  cursor: pointer;
-  transition: transform 0.2s, color 0.2s;
+  font-size: 2.3em;
+  margin: 0 12px;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
 }
-/* Icon hover effect */
 .rental-icon:hover {
-  color: #fd5e7a;
-  transform: scale(1.24) rotate(6deg);
+  color: #fd5e7a;
+  transform: scale(1.24) rotate(6deg);
 }
 
+/* Catering extra title */
 .catering-title {
-  color: #ffd64d;
-  font-size: 1.2em;
-  display: block;
-  margin-top: 7px;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px #2a334e;
-  transition: color 0.2s;
+  display: block;
+  margin-top: 7px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffd64d;
+  text-shadow: 2px 2px 5px #2a334e;
+  transition: color 0.2s;
 }
-/* Catering title hover */
 .catering-title:hover {
-  color: #fd5e7a;
+  color: #fd5e7a;
 }
 
-.chef-hat, .chicken-leg {
-  font-size: 2em;
-  margin: 0 10px;
-  transition: transform 0.2s, color 0.2s;
-  cursor: pointer;
+/* Food icons */
+.chef-hat,
+.chicken-leg {
+  font-size: 2em;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
 }
-/* Food icon hover */
-.chef-hat:hover, .chicken-leg:hover {
-  transform: scale(1.2) rotate(-12deg);
-  color: #fd5e7a;
+.chef-hat:hover,
+.chicken-leg:hover {
+  transform: scale(1.2) rotate(-12deg);
+  color: #fd5e7a;
 }
 
+/* ========== Footer ========== */
 footer {
-  background: rgba(44,44,60,0.08);
-  padding: 24px 0;
-  text-align: center;
-  margin-top: 40px;
-  box-shadow: 0 -4px 8px rgba(0,0,0,0.03);
-  transition: background 0.2s;
+  margin-top: 40px;
+  padding: 24px 0;
+  text-align: center;
+  background: rgba(44, 44, 60, 0.08);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.03);
+  transition: background 0.2s;
 }
-/* Footer hover */
 footer:hover {
-  background: rgba(255,214,77,0.13);
+  background: rgba(255, 214, 77, 0.13);
 }
 
 .contact-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2em;
 }
 
 .phone {
-  font-size: 2em;
-  transition: color 0.2s, transform 0.2s;
-  cursor: pointer;
+  font-size: 2em;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
 }
-/* Phone icon hover */
 .phone:hover {
-  color: #fd5e7a;
-  transform: scale(1.25);
+  color: #fd5e7a;
+  transform: scale(1.25);
 }
 
 .contact-number {
-  margin-top: 7px;
-  font-weight: bold;
-  color: #ffd64d;
-  transition: color 0.2s;
+  margin-top: 7px;
+  font-weight: bold;
+  color: #ffd64d;
+  transition: color 0.2s;
 }
-/* Contact number hover */
 .contact-number:hover {
-  color: #fd5e7a;
+  color: #fd5e7a;
 }
 
 .call-us {
-  margin-top: 8px;
-  font-size: 1em;
-  font-style: italic;
-  color: #37b7c9;
-  transition: color 0.2s;
+  margin-top: 8px;
+  font-size: 1em;
+  font-style: italic;
+  color: #37b7c9;
+  transition: color 0.2s;
 }
-/* Call us hover */
 .call-us:hover {
-  color: #2a334e;
+  color: #2a334e;
 }
