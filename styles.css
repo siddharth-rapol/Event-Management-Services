@@ -1,31 +1,24 @@
-/* ========== Theme Colors ========== */
-:root {
-  --light-bg: #FAF8F5;
-  --neutral: #C6C0B3;
-  --dark-accent: #4C5F4E;
-}
-
-/* Global Reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
   font-family: Arial, sans-serif;
-  background-color: var(--light-bg);
-  color: var(--dark-accent);
-  line-height: 1.6;
 }
 
-/* Navbar */
-.navbar {
-  background: linear-gradient(120deg, var(--light-bg) 0%, var(--neutral) 100%);
+/* Body */
+body {
+  background: linear-gradient(to right, #d9ebfb, #a9d1f7);
+  color: #222;
+}
+
+/* Header */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  background: linear-gradient(to right, #d9ebfb, #a9d1f7);
+  padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -37,19 +30,23 @@ body {
 }
 
 .logo img {
-  height: 40px;
+  height: 50px;
   margin-right: 10px;
 }
 
-.logo span {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: var(--dark-accent);
+.logo h1 {
+  font-size: 20px;
+  color: #222;
+}
+
+/* Navbar */
+.navbar {
+  position: relative;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
+  list-style: none;
 }
 
 .nav-links li {
@@ -58,42 +55,37 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--dark-accent);
+  font-size: 16px;
+  color: #222;
   font-weight: bold;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: white;
-  background: var(--dark-accent);
-  padding: 5px 10px;
-  border-radius: 5px;
+  color: #0066ff;
 }
 
+/* Hamburger for mobile */
 .hamburger {
   display: none;
-  font-size: 1.8rem;
+  font-size: 26px;
   cursor: pointer;
-  color: var(--dark-accent);
 }
 
-/* Responsive Nav */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: var(--neutral);
+    background: #a9d1f7;
     position: absolute;
-    top: 60px;
     right: 0;
+    top: 60px;
     width: 200px;
-    text-align: center;
+    padding: 10px;
   }
-
-  .nav-links.show {
+  .nav-links.active {
     display: flex;
   }
-
   .hamburger {
     display: block;
   }
@@ -101,58 +93,82 @@ body {
 
 /* Carousel */
 .carousel {
-  overflow: hidden;
-  width: 100%;
-  max-height: 500px;
   position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .slides {
   display: flex;
-  width: 300%;
-  animation: slide 12s infinite;
+  transition: transform 0.5s ease-in-out;
 }
 
-.slides img {
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
   width: 100%;
-  height: 500px;
+  height: 450px;
   object-fit: cover;
 }
 
-@keyframes slide {
-  0% { transform: translateX(0); }
-  33% { transform: translateX(-100%); }
-  66% { transform: translateX(-200%); }
-  100% { transform: translateX(0); }
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0066ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
 }
+
+.prev { left: 15px; }
+.next { right: 15px; }
 
 /* Intro Section */
-.intro-text {
+.intro {
   text-align: center;
   padding: 40px 20px;
-  background: var(--neutral);
-  color: var(--dark-accent);
 }
 
-.intro-text h1 {
+.intro h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.intro p {
+  font-size: 18px;
   margin-bottom: 20px;
-  font-size: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #0066ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #004bcc;
 }
 
 /* Footer */
 footer {
-  padding: 20px;
-  background: linear-gradient(120deg, var(--neutral) 0%, var(--dark-accent) 100%);
-  color: var(--light-bg);
   text-align: center;
-}
-
-footer a {
-  color: var(--light-bg);
-  text-decoration: none;
-  margin: 0 5px;
-}
-
-footer a:hover {
-  text-decoration: underline;
+  padding: 20px;
+  background: linear-gradient(to right, #d9ebfb, #a9d1f7);
+  color: #222;
+  margin-top: 30px;
+  font-size: 14px;
 }
