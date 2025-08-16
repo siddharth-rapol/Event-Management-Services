@@ -2,59 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Event Management Services</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header with Navbar -->
-  <header>
-    <div class="navbar">
-      <div class="logo">
-        <img src="logo.png" alt="Logo">
-        <span class="brand">Event Management</span>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Rentals</a></li>
-          <li><a href="#">Catering</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Event Logo">
+      <span>Event Management</span>
     </div>
-  </header>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Rentals</a></li>
+      <li><a href="#">Catering</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="hamburger">&#9776;</div>
+  </nav>
 
-  <!-- Carousel Section -->
-  <section class="carousel">
+  <!-- Carousel -->
+  <div class="carousel">
     <div class="slides">
-      <img src="event1.jpg" alt="Event 1">
-      <img src="event2.jpg" alt="Event 2">
-      <img src="event3.jpg" alt="Event 3">
+      <img src="party1.jpg" alt="Party Image 1">
+      <img src="party2.jpg" alt="Party Image 2">
+      <img src="party3.jpg" alt="Party Image 3">
     </div>
-  </section>
+  </div>
 
   <!-- Text Section -->
   <section class="intro-text">
-    <h2>Welcome to Our Event Management Services</h2>
+    <h1>Welcome to Our Event Management Services</h1>
     <p>
-      We provide complete event solutions including rentals, catering, and
-      decorations to make your special day unforgettable.
+      We specialize in creating unforgettable experiences through professional event 
+      planning, catering, and rentals. Whether it’s a wedding, birthday party, or 
+      corporate gathering, we bring your vision to life with creativity and excellence.
     </p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Event Management Services. All Rights Reserved.</p>
-      <p>Designed with ❤️ for your celebrations</p>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a> | 
-        <a href="#">Terms & Conditions</a> | 
-        <a href="#">Support</a>
-      </div>
-    </div>
+    <p>&copy; 2025 Event Management Services | All Rights Reserved</p>
+    <p>Follow us on 
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">Twitter</a>
+    </p>
   </footer>
+
+  <!-- Script (Hamburger toggle) -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
