@@ -12,6 +12,10 @@
       max-height: 500px;
       position: relative;
       overflow: hidden;
+      max-width: 1100px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     .slides {
@@ -30,27 +34,94 @@
       object-fit: cover;
     }
 
-    /* Buttons below paragraph */
-    .carousel-buttons {
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    .carousel-buttons button {
-      background-color: #4C5F4E;
-      color: white;
+    /* Floating Carousel Buttons */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(76,95,78,0.7);
+      color: #FAF8F5;
       border: none;
-      padding: 10px 20px;
-      margin: 5px;
-      font-size: 16px;
+      font-size: 30px;
       cursor: pointer;
-      border-radius: 6px;
-      transition: background 0.3s;
+      padding: 10px 15px;
+      border-radius: 50%;
+      z-index: 10;
+      transition: background 0.3s ease;
     }
 
-    .carousel-buttons button:hover {
+    .carousel-arrow:hover {
+      background: rgba(76,95,78,0.9);
+    }
+
+    .prev {
+      left: 15px;
+    }
+
+    .next {
+      right: 15px;
+    }
+
+    /* Social Media Buttons */
+    .social-buttons {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      z-index: 1000;
+    }
+
+    .social-buttons a {
+      display: inline-block;
+      background-color: #4C5F4E;
+      color: #FAF8F5;
+      padding: 10px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .social-buttons a:hover {
       background-color: #C6C0B3;
-      color: black;
+      color: #4C5F4E;
+    }
+
+    /* Content Section */
+    .content {
+      text-align: center;
+      padding: 40px 20px;
+      background: #FAF8F5;
+      color: #4C5F4E;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .content h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: #4C5F4E;
+    }
+
+    .content p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Footer */
+    footer {
+      background: #4C5F4E;
+      color: #FAF8F5;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -59,15 +130,126 @@
   <!-- Navbar -->
   <header>
     <nav class="navbar">
-     <a href="index.html">
-      <div class="logo">
-        <img src="logo.png" alt="Logo">
-      </div>
-    </a>
+      <a href="index.html">
+        <div class="logo">
+          <img src="logo.png" alt="Logo">
+        </div>
+      </a>
       <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- Carousel -->
+  <section class="carousel">
+    <div class="slides">
+      <div class="slide"><img src="event1.jpeg" alt="Party 1"></div>
+      <div class="slide"><img src="event2.jpeg" alt="Party 2"></div>
+      <div class="slide"><img src="event3.jpeg" alt="Party 3"></div>
+    </div>
+    <!-- Floating Carousel Buttons -->
+    <button id="prev" class="carousel-arrow prev">&#10094;</button>
+    <button id="next" class="carousel-arrow next">&#10095;</button>
+  </section>
+
+  <!-- Text Section -->
+  <section class="content">
+    <h2>Welcome to Our Event Management Services</h2>
+    <p>We specialize in creating unforgettable experiences, from weddings to corporate events and parties. 
+       Our team ensures every detail is perfect, making your special day stress-free and memorable.</p>
+  </section>
+
+  <!-- Social Media and Contact Buttons -->
+  <div class="social-buttons">
+    <a href="https://wa.me/your-number" target="_blank" aria-label="WhatsApp">WhatsApp</a>
+    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook">Facebook</a>
+    <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram">Instagram</a>
+    <a href="contact.html" aria-label="Contact Us">Contact Us</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Event Management Services. All Rights Reserved.</p>
+    <p>Designed with ❤️ by Our Team</p>
+  </footer>
+
+  <!-- Script Inside HTML -->
+  <script>
+    // Hamburger Menu
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Carousel Logic
+    const slides = document.querySelector('.slides');
+    const slideItems = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    
+    let index = 1; // start at first clone
+    const firstClone = slideItems[0].cloneNode(true);
+    const lastClone = slideItems[slideItems.length - 1].cloneNode(true);
+
+    slides.appendChild(firstClone);
+    slides.insertBefore(lastClone, slideItems[0]);
+
+    const allSlides = document.querySelectorAll('.slide');
+    const totalSlides = allSlides.length;
+
+    slides.style.transform = `translateX(-${index * 100}%)`;
+
+    // Show slide
+    function showSlide() {
+      slides.style.transition = "transform 1s ease-in-out";
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // Next Slide
+    function nextSlide() {
+      if (index >= totalSlides - 1) return;
+      index++;
+      showSlide();
+    }
+
+    // Prev Slide
+    function prevSlide() {
+      if (index <= 0) return;
+      index--;
+      showSlide();
+    }
+
+    // Looping Effect
+    slides.addEventListener("transitionend", () => {
+      if (allSlides[index].isSameNode(firstClone)) {
+        slides.style.transition = "none";
+        index = 1;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+      }
+      if (allSlides[index].isSameNode(lastClone)) {
+        slides.style.transition = "none";
+        index = totalSlides - 2;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+      }
+    });
+
+    // Buttons
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
+
+    // Auto Slide every 4 sec
+    setInterval(nextSlide, 4000);
+  </script>
+</body>
+</html>
         <li><a href="services.html">Services</a></li>
         <li><a href="#">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
