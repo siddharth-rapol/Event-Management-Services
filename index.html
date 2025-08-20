@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Event Management Services</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome CDN for social icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pVU3fdvyluFjhf4K2yK+Y2RwQc5jCgX+4quZkA+GRs7ZwW0W8FfDYfFHQ5MvD8zM3fZHgHCeXD1mRlLYNqI1Kg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
-
   <!-- Navbar -->
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo">
-        <img src="logo.png" alt="Event Management Logo">
+        <img src="logo.png" alt="Event Management Logo" />
       </a>
       <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
       <ul class="nav-links">
@@ -29,9 +36,15 @@
   <!-- Carousel -->
   <section class="carousel">
     <div class="slides">
-      <div class="slide" data-caption="Dream Weddings"><img src="event1.jpeg" alt="Wedding Event"></div>
-      <div class="slide" data-caption="Corporate Success"><img src="event2.jpeg" alt="Corporate Event"></div>
-      <div class="slide" data-caption="Memorable Parties"><img src="event3.jpeg" alt="Party Event"></div>
+      <div class="slide" data-caption="Dream Weddings">
+        <img src="event1.jpeg" alt="Wedding Event" />
+      </div>
+      <div class="slide" data-caption="Corporate Success">
+        <img src="event2.jpeg" alt="Corporate Event" />
+      </div>
+      <div class="slide" data-caption="Memorable Parties">
+        <img src="event3.jpeg" alt="Party Event" />
+      </div>
     </div>
     <button id="prev" class="carousel-arrow prev">&#10094;</button>
     <button id="next" class="carousel-arrow next">&#10095;</button>
@@ -40,32 +53,33 @@
   <!-- Content -->
   <section class="content fade-in">
     <h2>Welcome to Our Event Management Services</h2>
-    <p>We specialize in creating unforgettable experiences, from weddings to corporate events and parties.
-      Our team ensures every detail is perfect, making your special day stress-free and memorable.</p>
-          <div class="social-buttons">
-  <a href="https://wa.me/your-number" target="_blank" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="contact.html" aria-label="Contact Us">
-    <i class="fas fa-envelope"></i>
-  </a>
-</div>
+    <p>
+      We specialize in creating unforgettable experiences, from weddings to
+      corporate events and parties. Our team ensures every detail is perfect,
+      making your special day stress-free and memorable.
+    </p>
 
+    <!-- Social Buttons moved here -->
+    <div class="social-buttons">
+      <a href="https://wa.me/your-number" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="contact.html" aria-label="Contact Us">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
   </section>
 
-
-  <!-- Footer with Social Buttons -->
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Event Management Services. All Rights Reserved.</p>
     <p>Designed with ❤️ by Our Team</p>
-
-
   </footer>
 
   <!-- Scripts -->
@@ -79,15 +93,16 @@
 
     // Navbar scroll effect
     window.addEventListener("scroll", () => {
-      document.querySelector(".navbar")
+      document
+        .querySelector(".navbar")
         .classList.toggle("scrolled", window.scrollY > 50);
     });
 
     // Carousel Logic
-    const slides = document.querySelector('.slides');
-    const slideItems = document.querySelectorAll('.slide');
-    const prevBtn = document.getElementById('prev');
-    const nextBtn = document.getElementById('next');
+    const slides = document.querySelector(".slides");
+    const slideItems = document.querySelectorAll(".slide");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
 
     let index = 1;
     const firstClone = slideItems[0].cloneNode(true);
@@ -96,7 +111,7 @@
     slides.appendChild(firstClone);
     slides.insertBefore(lastClone, slideItems[0]);
 
-    const allSlides = document.querySelectorAll('.slide');
+    const allSlides = document.querySelectorAll(".slide");
     const totalSlides = allSlides.length;
 
     slides.style.transform = `translateX(-${index * 100}%)`;
@@ -135,18 +150,25 @@
     prevBtn.addEventListener("click", prevSlide);
 
     let autoSlide = setInterval(nextSlide, 4000);
-    document.querySelector(".carousel").addEventListener("mouseenter", () => clearInterval(autoSlide));
-    document.querySelector(".carousel").addEventListener("mouseleave", () => autoSlide = setInterval(nextSlide, 4000));
+    document
+      .querySelector(".carousel")
+      .addEventListener("mouseenter", () => clearInterval(autoSlide));
+    document
+      .querySelector(".carousel")
+      .addEventListener("mouseleave", () => (autoSlide = setInterval(nextSlide, 4000)));
 
     // Fade-in observer
     const faders = document.querySelectorAll(".fade-in");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    }, { threshold: 0.3 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+      },
+      { threshold: 0.3 }
+    );
 
-    faders.forEach(fader => observer.observe(fader));
+    faders.forEach((fader) => observer.observe(fader));
   </script>
 </body>
 </html>
