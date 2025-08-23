@@ -195,6 +195,87 @@ footer {
   font-size: 14px;
 }
 
+/* ========== NEW SERVICES SECTION ========== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.service-card {
+  position: relative;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.service-dark {
+  background: #C6C0B3;
+  color: #FAF8F5;
+}
+.service-light {
+  background: #FAF8F5;
+  color: #4C5F4E;
+}
+
+.service-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Submenu Styling */
+.submenu {
+  position: absolute;
+  top: 0;
+  right: -220px; /* hidden off screen */
+  height: 100%;
+  width: 200px;
+  background: rgba(76, 95, 78, 0.95);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 0 12px 12px 0;
+  transition: right 0.4s ease;
+}
+
+.submenu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.submenu a:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Show submenu on hover */
+.service-card:hover .submenu {
+  right: 0;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {
@@ -223,5 +304,20 @@ footer {
 
   .slide img {
     height: 60vh;
+  }
+
+  /* Services submenu adapts for mobile */
+  .submenu {
+    position: static;
+    width: 100%;
+    background: #4c5f4e;
+    border-radius: 8px;
+    margin-top: 15px;
+    right: auto;
+    transition: none;
+  }
+
+  .service-card:hover .submenu {
+    right: auto;
   }
 }
