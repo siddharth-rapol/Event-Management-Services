@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desi Food Menu - Event Management Services</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .menu-section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #faf8f5;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .menu-item {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .menu-item img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .menu-item h4 {
+      margin: 5px 0;
+      color: #4C5F4E;
+    }
+    .menu-item p {
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html">
+        <div class="logo">
+          <img src="logo.png" alt="Logo">
+        </div>
+      </a>
+      <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- Desi Food Menu -->
+  <section class="menu-section">
+    <h2>🍛 Desi Food Menu</h2>
+    <p>Traditional flavors, authentic spices, and homemade taste. All items: <strong>0.00$</strong></p>
+
+    <div class="menu-grid">
+      <!-- Item 1 -->
+      <div class="menu-item">
+        <img src="biryani.jpg" alt="Biryani">
+        <h4>Chicken Biryani</h4>
+        <p>0.00$</p>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="menu-item">
+        <img src="paneer.jpg" alt="Paneer Curry">
+        <h4>Paneer Butter Masala</h4>
+        <p>0.00$</p>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="menu-item">
+        <img src="naan.jpg" alt="Naan">
+        <h4>Garlic Naan</h4>
+        <p>0.00$</p>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="menu-item">
+        <img src="dal.jpg" alt="Dal Tadka">
+        <h4>Dal Tadka</h4>
+        <p>0.00$</p>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="menu-item">
+        <img src="gulabjamun.jpg" alt="Gulab Jamun">
+        <h4>Gulab Jamun</h4>
+        <p>0.00$</p>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="menu-item">
+        <img src="lassi.jpg" alt="Lassi">
+        <h4>Sweet Lassi</h4>
+        <p>0.00$</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Event Management Services | All Rights Reserved</p>
+  </footer>
+
+  <!-- Script for Navbar Toggle -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
