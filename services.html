@@ -31,6 +31,11 @@
       width: 120px;
       border-radius: 8px;
     }
+    /* Center single service card */
+    .services-grid.single-center {
+      display: flex;
+      justify-content: center;
+    }
   </style>
 </head>
 <body>
@@ -66,7 +71,7 @@
     </p>
   </section>
 
-  <!-- Service Cards -->
+  <!-- Service Cards Row 1 -->
   <section class="services-grid">
     <!-- Events -->
     <div class="service-card service-dark has-submenu">
@@ -96,8 +101,10 @@
         <a href="javascript:void(0)" onclick="showSection('pricing')">💲 Pricing</a>
       </div>
     </div>
+  </section>
 
-    <!-- Photography & Music -->
+  <!-- Photography & Music centered below -->
+  <section class="services-grid single-center">
     <div class="service-card service-light has-submenu">
       <h3>🎶 Photography & Music</h3>
       <p>Professional photographers, videographers, and live music/DJs for your events.</p>

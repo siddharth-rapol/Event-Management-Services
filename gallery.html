@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Event Management Services</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; }
+
+    /* Navbar */
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      background: #faf8f5; padding: 10px 20px; position: sticky; top: 0; z-index: 1000;
+      border-bottom: 2px solid #c6c0b3;
+    }
+    .logo img { height: 45px; }
+    .main-heading { flex: 1; text-align: center; font-size: 22px; font-weight: bold; color: #4c5f4e; }
+    .nav-links { list-style: none; display: flex; gap: 20px; }
+    .nav-links li a { text-decoration: none; color: #4c5f4e; font-weight: bold; transition: 0.3s; }
+    .nav-links li a:hover { color: #c6c0b3; }
+
+    /* Content */
+    main { max-width: 1100px; margin: 20px auto; padding: 20px; text-align: center; }
+    h2 { font-size: 28px; margin-bottom: 20px; color: #4c5f4e; }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;
+    }
+    .gallery-grid img {
+      width: 100%; border-radius: 10px; cursor: pointer; transition: transform 0.3s;
+    }
+    .gallery-grid img:hover { transform: scale(1.05); }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; z-index: 2000; top: 0; left: 0;
+      width: 100%; height: 100%; background: rgba(0,0,0,0.9);
+      justify-content: center; align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%; max-height: 80%; border-radius: 10px;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .close-btn {
+      position: absolute; top: 20px; right: 30px;
+      font-size: 30px; color: #fff; text-decoration: none;
+    }
+
+    /* Footer */
+    footer { background: #4c5f4e; color: #faf8f5; text-align: center; padding: 20px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html"><div class="logo"><img src="logo.png" alt="Logo"></div></a>
+      <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="rentals.html">Rentals</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Gallery Content -->
+  <main>
+    <h2>🎉 Our Gallery</h2>
+    <div class="gallery-grid">
+      <a href="#img1"><img src="event1.jpg" alt="Event 1"></a>
+      <a href="#img2"><img src="event2.jpg" alt="Event 2"></a>
+      <a href="#img3"><img src="event3.jpg" alt="Event 3"></a>
+      <a href="#img4"><img src="event4.jpg" alt="Event 4"></a>
+      <a href="#img5"><img src="event5.jpg" alt="Event 5"></a>
+      <a href="#img6"><img src="event6.jpg" alt="Event 6"></a>
+    </div>
+  </main>
+
+  <!-- Lightbox Modals -->
+  <div id="img1" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="event1.jpg" alt="Event 1">
+  </div>
+  <div id="img2" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="event2.jpg" alt="Event 2">
+  </div>
+  <div id="img3" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="event3.jpg" alt="Event 3">
+  </div>
+  <div id="img4" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="event4.jpg" alt="Event 4">
+  </div>
+  <div id="img5" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="event5.jpg" alt="Event 5">
+  </div>
+  <div id="img6" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="event6.jpg" alt="Event 6">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Event Management Services | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

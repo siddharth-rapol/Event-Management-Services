@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rentals - Event Management Services</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; }
+
+    /* Navbar */
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      background: #faf8f5; padding: 10px 20px; position: sticky; top: 0; z-index: 1000;
+      border-bottom: 2px solid #c6c0b3;
+    }
+    .logo img { height: 45px; }
+    .main-heading { flex: 1; text-align: center; font-size: 22px; font-weight: bold; color: #4c5f4e; }
+    .nav-links { list-style: none; display: flex; gap: 20px; }
+    .nav-links li a { text-decoration: none; color: #4c5f4e; font-weight: bold; transition: 0.3s; }
+    .nav-links li a:hover { color: #c6c0b3; }
+
+    /* Content */
+    main { max-width: 900px; margin: 20px auto; padding: 20px; }
+    h2 { font-size: 26px; margin-bottom: 20px; color: #4c5f4e; text-align: center; }
+
+    .rental-item {
+      display: flex; align-items: center; justify-content: space-between;
+      background: #faf8f5; padding: 15px; margin: 15px 0; border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .rental-item img { width: 150px; border-radius: 8px; }
+    .rental-item p { font-size: 20px; font-weight: bold; color: #4c5f4e; }
+
+    /* Alternate layout */
+    .reverse { flex-direction: row-reverse; }
+
+    /* Footer */
+    footer { background: #4c5f4e; color: #faf8f5; text-align: center; padding: 20px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html"><div class="logo"><img src="logo.png" alt="Logo"></div></a>
+      <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="rentals.html">Rentals</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Rentals Content -->
+  <main>
+    <h2>🪑 Rentals</h2>
+
+    <div class="rental-item">
+      <img src="chair.jpg" alt="Chair">
+      <p>Chair - 0.00$</p>
+    </div>
+
+    <div class="rental-item reverse">
+      <img src="table.jpg" alt="Table">
+      <p>Table - 0.00$</p>
+    </div>
+
+    <div class="rental-item">
+      <img src="cooler.jpg" alt="Cooler">
+      <p>Cooler - 0.00$</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Event Management Services | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
