@@ -5,17 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Services - Event Management Services</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Hide sections by default */
+    .hidden { display: none; }
+    .content-section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #faf8f5;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .pricing-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .pricing-box img {
+      width: 120px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navbar -->
- <header>
+  <header>
     <nav class="navbar">
-     <a href="index.html">
-      <div class="logo">
-        <img src="logo.png" alt="Logo">
-      </div>
-    </a>
+      <a href="index.html">
+        <div class="logo">
+          <img src="logo.png" alt="Logo">
+        </div>
+      </a>
       <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
@@ -29,7 +56,7 @@
   </header>
 
   <!-- Services Intro -->
-  <section class="content">
+  <section class="content" id="welcome">
     <h2>Our Services</h2>
     <p>
       At <strong>Event Management Services</strong>, we pride ourselves on delivering  
@@ -40,38 +67,93 @@
   </section>
 
   <!-- Service Cards -->
- <!-- Services Section -->
-<section class="services-grid">
-  <!-- Events -->
-  <div class="service-card service-dark has-submenu">
-    <h3>🎉 Events</h3>
-    <p>From weddings to corporate events, we create unforgettable experiences.</p>
-    <div class="submenu">
-      <a href="gallery.html">📸 Our Gallery</a>
+  <section class="services-grid">
+    <!-- Events -->
+    <div class="service-card service-dark has-submenu">
+      <h3>🎉 Events</h3>
+      <p>From weddings to corporate events, we create unforgettable experiences.</p>
+      <div class="submenu">
+        <a href="javascript:void(0)" onclick="showSection('gallery')">📸 Our Gallery</a>
+      </div>
     </div>
-  </div>
 
-  <!-- Catering -->
-  <div class="service-card service-light has-submenu">
-    <h3>🍽 Catering Services</h3>
-    <p>Delicious menus, tailored catering, and exceptional hospitality.</p>
-    <div class="submenu">
-      <a href="menu.html">🍴 Our Menu</a>
-      <a href="gallery.html">📸 Gallery</a>
+    <!-- Catering -->
+    <div class="service-card service-light has-submenu">
+      <h3>🍽 Catering Services</h3>
+      <p>Delicious menus, tailored catering, and exceptional hospitality.</p>
+      <div class="submenu">
+        <a href="javascript:void(0)" onclick="showSection('menu')">🍴 Our Menu</a>
+        <a href="javascript:void(0)" onclick="showSection('gallery')">📸 Gallery</a>
+      </div>
     </div>
-  </div>
 
-  <!-- Rentals -->
-  <div class="service-card service-dark has-submenu">
-    <h3>🏢 Rentals</h3>
-    <p>Elegant furniture, décor, and event equipment for hire.</p>
-    <div class="submenu">
-      <a href="collection.html">🎨 Our Collection</a>
-      <a href="pricing.html">💲 Pricing</a>
+    <!-- Rentals -->
+    <div class="service-card service-dark has-submenu">
+      <h3>🏢 Rentals</h3>
+      <p>Elegant furniture, décor, and event equipment for hire.</p>
+      <div class="submenu">
+        <a href="javascript:void(0)" onclick="showSection('collection')">🎨 Our Collection</a>
+        <a href="javascript:void(0)" onclick="showSection('pricing')">💲 Pricing</a>
+      </div>
     </div>
-  </div>
-</section>
 
+    <!-- Photography & Music -->
+    <div class="service-card service-light has-submenu">
+      <h3>🎶 Photography & Music</h3>
+      <p>Professional photographers, videographers, and live music/DJs for your events.</p>
+      <div class="submenu">
+        <a href="javascript:void(0)" onclick="showSection('photography')">📸 Photography</a>
+        <a href="javascript:void(0)" onclick="showSection('music')">🎵 Music</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Sections -->
+  <section id="menu" class="content-section hidden">
+    <h2>🍴 Catering Menu</h2>
+    <p>Explore our delicious catering options designed for every event.</p>
+    <p>All items: 0.00$</p>
+  </section>
+
+  <section id="gallery" class="content-section hidden">
+    <h2>📸 Event Gallery</h2>
+    <p>A showcase of our past events and happy clients.</p>
+    <img src="sample1.jpg" alt="Event Sample" width="200">
+    <img src="sample2.jpg" alt="Event Sample" width="200">
+  </section>
+
+  <section id="collection" class="content-section hidden">
+    <h2>🎨 Rental Collection</h2>
+    <p>Choose from our high-quality rental items to make your event perfect.</p>
+  </section>
+
+  <section id="pricing" class="content-section hidden">
+    <h2>💲 Rentals Pricing</h2>
+    <div class="pricing-box">
+      <img src="chair.jpg" alt="Chair">
+      <p>Chairs: 0.00$</p>
+    </div>
+    <div class="pricing-box">
+      <p>Tables: 0.00$</p>
+      <img src="table.jpg" alt="Table">
+    </div>
+    <div class="pricing-box">
+      <img src="cooler.jpg" alt="Cooler">
+      <p>Coolers: 0.00$</p>
+    </div>
+  </section>
+
+  <section id="photography" class="content-section hidden">
+    <h2>📸 Photography Packages</h2>
+    <p>Hourly Rate: 0.00$</p>
+    <p>Full Day Package: 0.00$</p>
+  </section>
+
+  <section id="music" class="content-section hidden">
+    <h2>🎵 Music Services</h2>
+    <p>Live Band: 0.00$</p>
+    <p>DJ Services: 0.00$</p>
+  </section>
 
   <!-- Closing -->
   <section class="content">
@@ -88,13 +170,23 @@
     <p>© 2025 Event Management Services | All Rights Reserved</p>
   </footer>
 
-  <!-- Script for Navbar Toggle -->
+  <!-- Script -->
   <script>
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
+
+    // Show section function
+    function showSection(sectionId) {
+      // Hide all
+      document.querySelectorAll('.content-section').forEach(sec => sec.classList.add('hidden'));
+      // Show selected
+      document.getElementById(sectionId).classList.remove('hidden');
+      // Scroll into view
+      document.getElementById(sectionId).scrollIntoView({behavior: "smooth"});
+    }
   </script>
 
 </body>

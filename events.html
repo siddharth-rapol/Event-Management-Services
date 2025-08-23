@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Management Services</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; }
+
+    /* Navbar */
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      background: #faf8f5; padding: 10px 20px; position: sticky; top: 0; z-index: 1000;
+      border-bottom: 2px solid #c6c0b3;
+    }
+    .logo img { height: 45px; }
+    .main-heading { flex: 1; text-align: center; font-size: 22px; font-weight: bold; color: #4c5f4e; }
+    .nav-links { list-style: none; display: flex; gap: 20px; position: relative; }
+    .nav-links li { position: relative; }
+    .nav-links li a {
+      text-decoration: none; color: #4c5f4e; font-weight: bold; transition: 0.3s;
+    }
+    .nav-links li a:hover { color: #c6c0b3; }
+
+    /* Dropdown */
+    .dropdown { position: relative; }
+    .dropdown-content {
+      display: none; position: absolute; top: 100%; left: 0;
+      background: #faf8f5; min-width: 180px; border: 1px solid #c6c0b3; border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .dropdown-content a {
+      display: block; padding: 10px; color: #4c5f4e; text-decoration: none;
+    }
+    .dropdown-content a:hover { background: #c6c0b3; color: #fff; }
+    .dropdown:hover .dropdown-content { display: block; }
+
+    /* Content Sections */
+    section {
+      display: none; text-align: center; padding: 40px 20px; max-width: 900px; margin: 0 auto;
+    }
+    section.active { display: block; }
+    section h2 { font-size: 28px; margin-bottom: 15px; color: #4c5f4e; }
+    section p { font-size: 18px; color: #333; line-height: 1.6; }
+
+    /* Rentals layout */
+    .rental-item {
+      display: flex; align-items: center; justify-content: space-between;
+      background: #faf8f5; padding: 15px; margin: 10px 0; border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .rental-item img { width: 120px; border-radius: 8px; }
+    .rental-item p { font-size: 18px; font-weight: bold; color: #4c5f4e; }
+
+    /* Gallery grid */
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;
+    }
+    .gallery-grid img {
+      width: 100%; border-radius: 10px; cursor: pointer; transition: transform 0.3s;
+    }
+    .gallery-grid img:hover { transform: scale(1.05); }
+
+    /* Footer */
+    footer { background: #4c5f4e; color: #faf8f5; text-align: center; padding: 20px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="#"><div class="logo"><img src="logo.png" alt="Logo"></div></a>
+      <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="#">Services ▼</a>
+          <div class="dropdown-content">
+            <a href="#" onclick="showSection('intro')">Services Intro</a>
+            <a href="#" onclick="showSection('menu')">Menu</a>
+            <a href="#" onclick="showSection('rentals')">Rentals</a>
+            <a href="#" onclick="showSection('photography')">Photography</a>
+            <a href="#" onclick="showSection('gallery')">Gallery</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sections -->
+  <main>
+    <!-- Default Services Intro -->
+    <section id="intro" class="active">
+      <h2>Welcome to Our Services</h2>
+      <p>Select a service from the menu above to explore our offerings.</p>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+      <h2>🍽 Menu</h2>
+      <p>Discover our delicious food and drinks. Pricing: 0.00$</p>
+    </section>
+
+    <!-- Rentals Section -->
+    <section id="rentals">
+      <h2>🪑 Rentals</h2>
+      <div class="rental-item">
+        <img src="chair.jpg" alt="Chair">
+        <p>Chair - 0.00$</p>
+      </div>
+      <div class="rental-item">
+        <p>Table - 0.00$</p>
+        <img src="table.jpg" alt="Table">
+      </div>
+      <div class="rental-item">
+        <img src="cooler.jpg" alt="Cooler">
+        <p>Cooler - 0.00$</p>
+      </div>
+    </section>
+
+    <!-- Photography Section -->
+    <section id="photography">
+      <h2>📸 Photography Packages</h2>
+      <p>Hourly Rate: 0.00$</p>
+      <p>Full Day Package: 0.00$</p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+      <h2>🎉 Our Gallery</h2>
+      <div class="gallery-grid">
+        <img src="event1.jpg" alt="Event 1">
+        <img src="event2.jpg" alt="Event 2">
+        <img src="event3.jpg" alt="Event 3">
+        <img src="event4.jpg" alt="Event 4">
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Event Management Services | All Rights Reserved</p>
+  </footer>
+
+  <!-- Script for section switching -->
+  <script>
+    function showSection(id) {
+      document.querySelectorAll("main section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
