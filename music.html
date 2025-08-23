@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Services - Event Management Services</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; }
+
+    /* Navbar */
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      background: #faf8f5; padding: 10px 20px; position: sticky; top: 0; z-index: 1000;
+      border-bottom: 2px solid #c6c0b3;
+    }
+    .logo img { height: 45px; }
+    .main-heading { flex: 1; text-align: center; font-size: 22px; font-weight: bold; color: #4c5f4e; }
+    .nav-links { list-style: none; display: flex; gap: 20px; }
+    .nav-links li a { text-decoration: none; color: #4c5f4e; font-weight: bold; transition: 0.3s; }
+    .nav-links li a:hover { color: #c6c0b3; }
+
+    /* Page */
+    main { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+    .hero {
+      text-align: center; padding: 24px 16px; background: #faf8f5; border-radius: 12px;
+      border: 1px solid #e8e2d8; margin-bottom: 20px;
+    }
+    .hero h1 { color: #4c5f4e; font-size: 28px; margin-bottom: 8px; }
+    .hero p { color: #333; }
+
+    /* Sections */
+    h2.section-title {
+      color: #4c5f4e; font-size: 22px; margin: 22px 0 10px;
+      border-left: 6px solid #c6c0b3; padding-left: 10px;
+    }
+
+    /* Cards / Packages */
+    .package-grid {
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .card {
+      background: #ffffff; border: 1px solid #e8e2d8; border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .card img {
+      width: 100%; height: 150px; object-fit: cover; background: #eee;
+    }
+    .card .body { padding: 14px; }
+    .card h3 { color: #4c5f4e; font-size: 18px; margin-bottom: 6px; }
+    .card p { color: #444; font-size: 15px; line-height: 1.5; }
+    .price { margin-top: 10px; font-weight: 700; color: #2a2a2a; }
+
+    /* Pricing blocks */
+    .pricing-list { display: grid; gap: 10px; }
+    .pricing-item {
+      display: flex; justify-content: space-between; align-items: center;
+      background: #faf8f5; border: 1px dashed #d7d2c8; border-radius: 10px; padding: 10px 12px;
+      font-size: 15px; color: #333;
+    }
+    .pricing-item span { font-weight: 700; color: #4c5f4e; }
+
+    /* CTA */
+    .cta {
+      margin: 26px 0; text-align: center;
+      background: #4c5f4e; color: #fff; padding: 16px; border-radius: 12px;
+    }
+    .cta a {
+      display: inline-block; margin-top: 8px; background: #c6c0b3; color: #1d1d1d;
+      padding: 10px 14px; border-radius: 8px; text-decoration: none; font-weight: 700;
+    }
+    .cta a:hover { filter: brightness(0.95); }
+
+    /* Footer */
+    footer { background: #4c5f4e; color: #faf8f5; text-align: center; padding: 20px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html"><div class="logo"><img src="logo.png" alt="Logo"></div></a>
+      <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="rentals.html">Rentals</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <main>
+    <div class="hero">
+      <h1>🎵 Music & Entertainment</h1>
+      <p>Professional DJs, live bands, and full sound & lighting — tailored for weddings, parties, and corporate events.</p>
+    </div>
+
+    <!-- DJs -->
+    <h2 class="section-title">DJ Services</h2>
+    <div class="package-grid">
+      <div class="card">
+        <img src="dj.jpg" alt="DJ Services">
+        <div class="body">
+          <h3>DJ Packages</h3>
+          <p>Pro sound system, curated playlists, and smooth MC hosting.</p>
+          <div class="pricing-list">
+            <div class="pricing-item"><span>Hourly</span> 0.00$</div>
+            <div class="pricing-item"><span>4-Hour Set</span> 0.00$</div>
+            <div class="pricing-item"><span>Full Day</span> 0.00$</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="lighting.jpg" alt="Lighting">
+        <div class="body">
+          <h3>Lighting Add-Ons</h3>
+          <p>Uplighting, dance floor effects, and custom monograms.</p>
+          <div class="pricing-list">
+            <div class="pricing-item"><span>Basic Lights</span> 0.00$</div>
+            <div class="pricing-item"><span>Premium Lights</span> 0.00$</div>
+            <div class="pricing-item"><span>Pro Show</span> 0.00$</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Bands -->
+    <h2 class="section-title">Live Band Options</h2>
+    <div class="package-grid">
+      <div class="card">
+        <img src="band.jpg" alt="Live Band">
+        <div class="body">
+          <h3>Band Packages</h3>
+          <p>From cocktail jazz to high-energy party hits — we’ve got you covered.</p>
+          <div class="pricing-list">
+            <div class="pricing-item"><span>Trio (3-piece)</span> 0.00$</div>
+            <div class="pricing-item"><span>Quartet (4-piece)</span> 0.00$</div>
+            <div class="pricing-item"><span>Full Band (5+)</span> 0.00$</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="sound.jpg" alt="Sound System">
+        <div class="body">
+          <h3>Sound System</h3>
+          <p>PA setup, wireless mics, and on-site audio engineer.</p>
+          <div class="pricing-list">
+            <div class="pricing-item"><span>Small Room</span> 0.00$</div>
+            <div class="pricing-item"><span>Ballroom</span> 0.00$</div>
+            <div class="pricing-item"><span>Outdoor Event</span> 0.00$</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <div>Ready to book your music experience?</div>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Event Management Services | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
