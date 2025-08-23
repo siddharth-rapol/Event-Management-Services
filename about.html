@@ -5,24 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - Event Management Services</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #faf8f5;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .highlight-section {
+      background: #C6C0B3;
+      color: #FAF8F5;
+      border-radius: 10px;
+      padding: 30px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .highlight-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    .highlight-section li::before {
+      content: "✔ ";
+      color: #2d2d2d;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navbar -->
- <header>
+  <header>
     <nav class="navbar">
-     <a href="index.html">
-      <div class="logo">
-        <img src="logo.png" alt="Logo">
-      </div>
-    </a>
+      <a href="index.html">
+        <div class="logo">
+          <img src="logo.png" alt="Logo">
+        </div>
+      </a>
       <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="#">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="hamburger">&#9776;</div>
@@ -41,21 +73,21 @@
     <p>
       With a passionate team and years of expertise, we bring together design, planning,  
       and seamless coordination to craft events that reflect your personality and purpose.  
-      Our goal is to ensure you enjoy your celebration stress-free while we handle  
+      Our mission is to let you enjoy your celebration stress-free while we handle  
       every detail with professionalism.
     </p>
   </section>
 
-  <!-- Our Services Section -->
-  <section class="content" style="background:#C6C0B3; color:#FAF8F5;">
+  <!-- Services Highlight -->
+  <section class="content highlight-section">
     <h2>Our Services</h2>
-    <ul style="list-style:none; padding:0; font-size:18px; line-height:1.8;">
-      <li>✔ Wedding Planning & Decoration</li>
-      <li>✔ Corporate Events & Conferences</li>
-      <li>✔ Birthday & Private Parties</li>
-      <li>✔ Cultural & Community Events</li>
-      <li>✔ Concerts, Exhibitions & Festivals</li>
-      <li>✔ Catering, Photography & Entertainment</li>
+    <ul>
+      <li>Wedding Planning & Decoration</li>
+      <li>Corporate Events & Conferences</li>
+      <li>Birthday & Private Parties</li>
+      <li>Cultural & Community Events</li>
+      <li>Concerts, Exhibitions & Festivals</li>
+      <li>Catering, Photography & Entertainment</li>
     </ul>
   </section>
 
@@ -63,9 +95,8 @@
   <section class="content">
     <h2>Our Mission</h2>
     <p>
-      To create unforgettable, unique, and stress-free events for our clients in the  
-      United States and beyond. We aim to combine innovation, personalization, and  
-      professionalism to bring your dream event to life.
+      To create unforgettable, unique, and stress-free events for our clients across the United States.  
+      We combine innovation, personalization, and professionalism to transform your dream event into reality.
     </p>
   </section>
 
