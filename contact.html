@@ -9,19 +9,19 @@
 <body>
 
   <!-- Navbar -->
- <header>
+  <header>
     <nav class="navbar">
-     <a href="index.html">
-      <div class="logo">
-        <img src="logo.png" alt="Logo">
-      </div>
-    </a>
+      <a href="index.html">
+        <div class="logo">
+          <img src="logo.png" alt="Logo">
+        </div>
+      </a>
       <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="#">Gallery</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="hamburger">&#9776;</div>
@@ -33,7 +33,7 @@
     <h2>Contact Us</h2>
     <p>
       We would love to hear from you! Whether you’re planning a wedding, corporate event,  
-      or private party anywhere in the United States, our team is here to help.  
+      or private party, our team is here to help.  
       Get in touch with us today.
     </p>
   </section>
@@ -44,12 +44,14 @@
     <!-- Contact Form -->
     <div style="background:#FAF8F5; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
       <h3 style="color:#4C5F4E;">Send us a Message</h3>
-      <form action="#" method="post" style="display:flex; flex-direction:column; gap:15px;">
-        <input type="text" name="name" placeholder="Your Name" required style="padding:10px; border:1px solid #ccc; border-radius:5px;">
-        <input type="email" name="email" placeholder="Your Email" required style="padding:10px; border:1px solid #ccc; border-radius:5px;">
-        <input type="text" name="subject" placeholder="Subject" required style="padding:10px; border:1px solid #ccc; border-radius:5px;">
-        <textarea name="message" rows="5" placeholder="Your Message" required style="padding:10px; border:1px solid #ccc; border-radius:5px;"></textarea>
-        <button type="submit" style="background:#4C5F4E; color:#FAF8F5; padding:12px; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Send Message</button>
+      <form onsubmit="sendWhatsApp(event)" style="display:flex; flex-direction:column; gap:15px;">
+        <input type="text" id="name" placeholder="Your Name" required style="padding:10px; border:1px solid #ccc; border-radius:5px;">
+        <input type="email" id="email" placeholder="Your Email" required style="padding:10px; border:1px solid #ccc; border-radius:5px;">
+        <input type="text" id="subject" placeholder="Subject" required style="padding:10px; border:1px solid #ccc; border-radius:5px;">
+        <textarea id="message" rows="5" placeholder="Your Message" required style="padding:10px; border:1px solid #ccc; border-radius:5px;"></textarea>
+        <button type="submit" style="background:#25D366; color:#fff; padding:12px; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">
+          💬 Send via WhatsApp
+        </button>
       </form>
     </div>
 
@@ -57,16 +59,17 @@
     <div style="background:#C6C0B3; color:#FAF8F5; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
       <h3>Our Office</h3>
       <p>📍 Event Management Services<br>
-      123 Main Street,<br>
-      New York, NY 10001, USA</p>
+      302 N Rd,<br>
+      Broad Brook, CT 06016, USA</p>
 
-      <p>📞 +1 (555) 123-4567</p>
+      <p>📞 +1 (860) 416-7170</p>
       <p>✉️ info@eventmanagement.com</p>
 
       <h3>Find Us on Map</h3>
       <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.8765281210195!2d-74.00601538459362!3d40.71277577933088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDQyJzQ2LjAiTiA3NMKwMDAnMjAuMiJX!5e0!3m2!1sen!2sus!4v1616176642690!5m2!1sen!2sus"
-        width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" allowfullscreen="" loading="lazy"></iframe>
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2946.332501772678!2d-72.5554239!3d41.9300753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e6fa46329bdb85%3A0x975482e3a7b8b01b!2s302%20N%20Rd%2C%20Broad%20Brook%2C%20CT%2006016%2C%20USA!5e0!3m2!1sen!2sus!4v1724094745000!5m2!1sen!2sus"
+        width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" allowfullscreen="" loading="lazy">
+      </iframe>
     </div>
 
   </section>
@@ -76,13 +79,28 @@
     <p>© 2025 Event Management Services | All Rights Reserved</p>
   </footer>
 
-  <!-- Script for Navbar Toggle -->
+  <!-- Script for Navbar & WhatsApp -->
   <script>
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
+
+    // Send WhatsApp function
+    function sendWhatsApp(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const subject = document.getElementById("subject").value;
+      const message = document.getElementById("message").value;
+
+      const phone = "18604167170"; // WhatsApp number (without +)
+      const text = `Hello, my name is ${name}.\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+      window.open(url, "_blank");
+    }
   </script>
 
 </body>
