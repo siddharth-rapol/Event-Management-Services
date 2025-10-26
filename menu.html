@@ -4,44 +4,117 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Menu - Event Management Services</title>
- <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
     /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
 
     /* Navbar */
     .navbar {
-      display: flex; justify-content: space-between; align-items: center;
-      background: #faf8f5; padding: 10px 20px; position: sticky; top: 0; z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #faf8f5;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       border-bottom: 2px solid #c6c0b3;
     }
-    .logo img { height: 45px; }
-    .main-heading { flex: 1; text-align: center; font-size: 22px; font-weight: bold; color: #4c5f4e; }
-    .nav-links { list-style: none; display: flex; gap: 20px; position: relative; }
-    .nav-links li a { text-decoration: none; color: #4c5f4e; font-weight: bold; transition: 0.3s; }
-    .nav-links li a:hover { color: #c6c0b3; }
+
+    .logo img {
+      height: 45px;
+    }
+
+    .main-heading {
+      flex: 1;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #4c5f4e;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #4c5f4e;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #c6c0b3;
+    }
 
     /* Page Content */
-    main { max-width: 900px; margin: 20px auto; padding: 20px; }
-    h2 { font-size: 26px; margin: 20px 0 10px; color: #4c5f4e; border-bottom: 2px solid #c6c0b3; padding-bottom: 5px; }
-    ul { list-style: none; margin: 10px 0 20px; padding: 0; }
-    ul li { font-size: 18px; padding: 6px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #ddd; }
-    ul li span { font-weight: bold; color: #4c5f4e; }
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin: 20px 0 10px;
+      color: #4c5f4e;
+      border-bottom: 2px solid #c6c0b3;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 10px 0 20px;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 18px;
+      padding: 6px 0;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed #ddd;
+    }
+
+    ul li span {
+      font-weight: bold;
+      color: #4c5f4e;
+    }
 
     /* Footer */
-    footer { background: #4c5f4e; color: #faf8f5; text-align: center; padding: 20px; margin-top: 30px; }
+    footer {
+      background: #4c5f4e;
+      color: #faf8f5;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
   </style>
 </head>
-<body>
 
+<body>
   <!-- Navbar -->
   <header>
     <nav class="navbar">
-      <a href="index.html"><div class="logo"><img src="images/logo.png" alt="Logo"></div></a>
+      <a href="index.html">
+        <div class="logo">
+          <img src="logo.png" alt="Logo">
+        </div>
+      </a>
       <h1 class="main-heading">EVENT MANAGEMENT SERVICES</h1>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -63,7 +136,7 @@
       <li>2-pc Chicken <span>8.59$</span></li>
       <li>3-pc Chicken <span>9.99$</span></li>
       <li>4-pc Chicken <span>10.99$</span></li>
-      </ul>
+    </ul>
 
     <h2>🍖 Hand Breaded Tenders</h2>
     <ul>
@@ -113,6 +186,5 @@
   <footer>
     <p>© 2025 Event Management Services | All Rights Reserved</p>
   </footer>
-
 </body>
 </html>
